@@ -1,0 +1,22 @@
+.container-lista-comentario {
+    margin-top: 10px;
+}
+
+.comment-count {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.comment-list-items {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin: 0;
+}
+
+.comment-item {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 4px;
+    word-break: break-word;
+}

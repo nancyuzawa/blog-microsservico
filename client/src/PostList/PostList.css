@@ -1,0 +1,16 @@
+.post-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.post-container {
+    border: 1px solid #ccc;
+    /* background-color: chocolate; */
+    margin: 10px;
+    padding: 10px 1px;
+    border-radius: 10px;
+}
+
+.card-body {
+    padding: 10px;
+}

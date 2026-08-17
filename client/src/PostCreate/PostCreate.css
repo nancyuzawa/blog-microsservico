@@ -1,0 +1,50 @@
+.post-create {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #bcb6ff;
+}
+
+.form-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form {
+    margin: 5px;
+    font-size: 18px;
+}
+
+.field {
+    margin-left: 15px;
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 18px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.field:focus {
+    border-color: #4f46e5;
+}
+
+.button {
+    font-size: 18px;
+    padding: 8px 16px;
+    background-color: #4f46e5;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s;
+    margin-bottom: 30px;
+}
+
+.button:hover {
+    background-color: #4338ca;
+}

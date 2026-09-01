@@ -9,7 +9,8 @@ const PostList = () => {
     //Receber o conteúdo que está no backend
     const fetchPosts = async () => {
         try {
-            const response = await fetch('http://localhost:4000/posts');
+            // const response = await fetch('http://localhost:4000/posts');
+            const response = await fetch('http://localhost:4002/posts');
             const data = await response.json();
             console.log("Response: ", data);
             setPosts(data);

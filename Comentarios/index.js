@@ -28,7 +28,7 @@ app.get('/posts/:id/comments', (req, res) => {
 
 
 // Criar um comentário
-app.post('/comments_client', (req, res) => {
+app.post('/comments_client', async (req, res) => {
     if (!req.body || !req.body.comment || !req.body.postId) {
         return res.status(400).send({
             error: 'É necessário preencher todos os campos!'
@@ -36,9 +36,7 @@ app.post('/comments_client', (req, res) => {
     }
 
     const id = randomBytes(4).toString('hex');
-
     const { postId, comment } = req.body;
-
     const newComment = {
         id,
         postId,
@@ -47,10 +45,38 @@ app.post('/comments_client', (req, res) => {
 
     comments_client.push(newComment);
 
+    
+    //minha adição
+    try {
+        const response = await fetch('http://localhost:4005/events', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                type: 'CommentCreated', 
+                id, 
+                postId, 
+                content: comment
+            })
+        })
+        if(!response.ok) {
+            throw new Error('Request error on 4005: ', response.statusText)
+        }
+        const data = await response.json();
+        console.log('Response from 4005 ', data);
+    } catch (error) {
+        console.error('Error request. Port 4005', error) // Porta do event-bus
+    }
     res.status(201).send(newComment);
 });
 
+//minha adição
+app.post('/events', (req, res) => {
+    console.log('Received event: ', req.body);
+    res.send({});
+})
 
-app.listen(5000, () => {
-    console.log('Comments service listening on PORT: 5000!');
+app.listen(4001, () => {
+    console.log('Comments service listening on PORT: 4001!');
 });

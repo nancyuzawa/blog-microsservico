@@ -10,7 +10,7 @@ const CommentCreate = ({ postId }) => {
         if (!addComment.trim()) return;
 
         try {
-            const response = await fetch('http://localhost:5000/comments_client', {
+            const response = await fetch('http://localhost:4001/comments_client', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -39,10 +39,10 @@ const CommentCreate = ({ postId }) => {
                 <input
                     value={addComment}
                     onChange={(e) => setAddComment(e.target.value)}
-                    placeholder="Escreva um comentário..."
+                    placeholder="Write a comment..."
                     className="input-comment"
                 />
-                <button type="submit" className="btn-comment">Comentar</button>
+                <button type="submit" className="btn-comment">Submit</button>
             </form>
         </div>
     );

@@ -1,13 +1,14 @@
 .post-list {
     display: flex;
+    /*justify-content: space-around;*/
     flex-wrap: wrap;
 }
 
 .post-container {
     border: 1px solid #ccc;
     /* background-color: chocolate; */
-    margin: 10px;
-    padding: 10px 1px;
+    margin: 20px 10px 10px 10px;
+    padding: 1px;
     border-radius: 10px;
 }
 

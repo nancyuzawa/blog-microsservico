@@ -1,0 +1,10 @@
+{
+  "devDependencies": {
+    "concurrently": "^10.0.5"
+    
+  },
+  "scripts": {
+    "dev": "concurrently -n client,comentarios,event-bus,posts,query -c blue,green,yellow,magenta,cyan \"npm start --prefix client\" \"node Comentarios/index.js\" \"node event-bus/index.js\" \"node Posts/index.js\" \"node query/index.js\""
+  }
+}
+
